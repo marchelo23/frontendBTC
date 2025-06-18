@@ -7,7 +7,7 @@ function initializeApp() {
     const predictBtn = document.getElementById('predictBtn');
     const resultContainer = document.getElementById('result-container');
     const loadingSpinner = document.getElementById('loadingSpinner');
-    const apiUrl = 'https://marchelo23-backendbtc.hf.space'; // Replace with your live API URL
+    const apiUrl = 'https://marchelo23-backendbtc.hf.space/predict_btc_next_hour'; // Replace with your live API URL
 
     // Use cwrap to create a JS function from our C++ function
     const procesarPrediccionWasm = Module.cwrap(
