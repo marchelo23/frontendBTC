@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Price Forecast</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"> </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +23,7 @@
                         Click the button to obtain the prediction of the Bitcoin price for the next hour.
                     </p>
                     
-                    <button class="prediction-button" onclick="getPrediction()">
+                    <button class="prediction-button" id="predictBtn">
                         Get Prediction
                     </button>
                     
@@ -49,40 +48,6 @@
         </main>
     </div>
 
-    <script>
-        function getPrediction() {
-            const button = document.querySelector('.prediction-button');
-            const resultBox = document.getElementById('resultBox');
-            
-            button.textContent = 'Processing...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                resultBox.style.display = 'block';
-                resultBox.style.opacity = '0';
-                resultBox.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    resultBox.style.opacity = '1';
-                    resultBox.style.transform = 'translateY(0)';
-                }, 100);
-                
-                button.textContent = 'Get Prediction';
-                button.disabled = false;
-            }, 2000);
-        }
-        
-        // Animate stars
-        function animateStars() {
-            const stars = document.querySelectorAll('.star');
-            stars.forEach((star, index) => {
-                setTimeout(() => {
-                    star.style.animation = `twinkle 2s ease-in-out infinite`;
-                }, index * 500);
-            });
-        }
-        
-        window.addEventListener('load', animateStars);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
