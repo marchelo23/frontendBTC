@@ -17,16 +17,37 @@ body {
     margin: 0;
     padding: 20px;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to bottom, #1A1A1A, #2C2C2C);
+    /* Fondo con mapa mundial y degradado */
+    background-image: 
+        url('mapamundi-CU6H5XGh.png'); /* Mapa de fondo */ /* Degradado anaranjado */
+    background-blend-mode: overlay; /* Combina el mapa y el degradado */
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Nueva propiedad para centrado */
+    justify-content: center; /* Nueva propiedad para centrado horizontal */
+    align-items: center; /* Nueva propiedad para centrado vertical */
 }
 
 .container {
+    position: relative; /* Necesario para posicionar el logo */
     text-align: center;
     max-width: 600px;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo ligeramente transparente */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    position: absolute; /* Posiciona el logo en la esquina */
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Asegura que el logo esté por encima del contenido */
+}
+
+.logo img {
+    height: 40px; /* Tamaño del logo */
 }
 
 h1 {
@@ -65,12 +86,12 @@ p {
     width: 200px;
     height: 200px;
     margin: 30px auto;
-    background-color: var(--precio-btc);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--negro-mate);
+}
+
+.bitcoin-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 #result-container {
