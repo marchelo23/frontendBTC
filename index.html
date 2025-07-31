@@ -1,38 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitcoinTravel Predictor</title>
-    
-    <!-- Fuente Inter desde Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Bitcoin Price Forecast</title>
     <link rel="stylesheet" href="style.css">
-    
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Logo de BitcoinTravel en la esquina superior izquierda -->
-        <div class="logo">
-            <img src="logoDark-C1GxaECK.png" alt="BitcoinTravel Logo">
-        </div>
-
-        <h1>Bitcoin Price Forecast</h1>
-        <p>Click the button to obtain the prediction of the Bitcoin price for the next hour.</p>
-        <button id="predictBtn">Get Prediction</button>
+        <!-- Background Elements -->
+        <div class="background-map"></div>
+        <div class="background-gradient"></div>
         
-        <!-- Área para la imagen de Bitcoin -->
-        <div class="bitcoin-image">
-            <img src="bottom-bitcoin-BETnyZmz.png" alt="Bitcoin Logo" width="200" height="200">
-        </div>
-        
-        <div id="result-container">
-            <div class="spinner" id="loadingSpinner"></div>
-        </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="text-section">
+                    <h1 class="main-title">Bitcoin Price Forecast</h1>
+                    
+                    <p class="subtitle">
+                        Click the button to obtain the prediction of the Bitcoin price for the next hour.
+                    </p>
+                    
+                    <button class="prediction-button" onclick="getPrediction()">
+                        Get Prediction
+                    </button>
+                    
+                    <div class="result-box" id="resultBox">
+                        <!-- Contenedor vacío para los datos de la API -->
+                    </div>
+                </div>
+                
+                <div class="bitcoin-crystal-ball">
+                    <div class="glow"></div>
+                    <div class="crystal">
+                        <div class="shine"></div>
+                        <div class="btc-symbol">₿</div>
+                    </div>
+                    <div class="base"></div>
+                    <div class="stars">
+                        <span class="star top-left">✦</span>
+                        <span class="star top-right">✦</span>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+
+    <script>
+        function getPrediction() {
+            const button = document.querySelector('.prediction-button');
+            const resultBox = document.getElementById('resultBox');
+            
+            button.textContent = 'Processing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                resultBox.style.display = 'block';
+                resultBox.style.opacity = '0';
+                resultBox.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    resultBox.style.opacity = '1';
+                    resultBox.style.transform = 'translateY(0)';
+                }, 100);
+                
+                button.textContent = 'Get Prediction';
+                button.disabled = false;
+            }, 2000);
+        }
+        
+        // Animate stars
+        function animateStars() {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                setTimeout(() => {
+                    star.style.animation = `twinkle 2s ease-in-out infinite`;
+                }, index * 500);
+            });
+        }
+        
+        window.addEventListener('load', animateStars);
+    </script>
 </body>
 </html>
