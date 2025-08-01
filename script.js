@@ -37,10 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 resultBox.innerHTML = resultadoHTML;
                 resultBox.style.display = 'block';
+                // Add the 'visible' class to trigger the CSS animation and make it visible
+                resultBox.classList.add('visible');
                 
             } catch (error) {
                 console.error('Error:', error);
                 resultBox.innerHTML = `<p style="color: #cf6679;"><strong>Error:</strong> ${error.message}</p>`;
+                resultBox.style.display = 'block';
+                // Add the 'visible' class even for error messages
+                resultBox.classList.add('visible');
             } finally {
                 predictBtn.textContent = 'Get Prediction';
                 predictBtn.disabled = false;
