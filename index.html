@@ -9,41 +9,46 @@
 </head>
 <body>
     <div class="container">
-        <!-- Background Elements -->
-        <div class="background-map"></div>
-        <div class="background-gradient"></div>
+        <div class="background-overlay"></div>
         
-        <!-- Main Content -->
         <main class="main-content">
-            <div class="content-wrapper">
-                <div class="text-section">
-                    <h1 class="main-title">Bitcoin Price Forecast</h1>
-                    
-                    <p class="subtitle">
-                        Click the button to obtain the prediction of the Bitcoin price for the next hour.
-                    </p>
-                    
-                    <button class="prediction-button" id="predictBtn">
-                        Get Prediction
-                    </button>
-                    
-                    <div class="result-box" id="resultBox">
-                        <!-- Contenedor vacío para los datos de la API -->
-                    </div>
-                </div>
-                
+            <div class="header-section">
+                <h1 class="main-title">Bitcoin Price Forecast</h1>
+                <p class="subtitle">
+                    Click the button to obtain the prediction of the Bitcoin price for the next hour.
+                </p>
+            </div>
+            
+            <div class="action-section">
+                <button class="prediction-button" id="predictBtn">
+                    Get Prediction
+                </button>
                 <div class="bitcoin-crystal-ball">
+                    <span class="star star-left">✦</span>
+                    <span class="star star-right">✦</span>
                     <div class="glow"></div>
                     <div class="crystal">
                         <div class="shine"></div>
                         <div class="btc-symbol">₿</div>
                     </div>
                     <div class="base"></div>
-                    <div class="stars">
-                        <span class="star top-left">✦</span>
-                        <span class="star top-right">✦</span>
-                    </div>
                 </div>
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p class="loading-text">Analyzing market data with C++/Wasm...</p>
+            </div>
+            
+            <div class="result-box" id="resultBox">
+                <div class="result-header">
+                    <div class="result-label">Result Processed with C++/Wasm ---</div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>© 2025 Bitcoin Price Forecast | Advanced predictive analytics</p>
+                <p>Powered by C++/WebAssembly technology</p>
             </div>
         </main>
     </div>
